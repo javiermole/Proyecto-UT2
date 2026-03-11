@@ -1,0 +1,1 @@
+CTF{4cc3s0_ssh_c0ns3gu1d0}
