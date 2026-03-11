@@ -3,9 +3,10 @@ FROM ubuntu:22.04
 # Evitar prompts interactivos durante apt install
 ENV DEBIAN_FRONTEND=noninteractive
 
-# Copiamos la carpeta src y la carpeta web al contenedor
+# Copiamos la carpeta src, la web y AHORA LAS FLAGS al contenedor
 COPY ./src /src
 COPY ./html /var/www/html
+COPY ./flags /flags
 
 # Ejecutamos el script de preparación de la máquina
 RUN chmod +x /src/prepare.sh && /src/prepare.sh

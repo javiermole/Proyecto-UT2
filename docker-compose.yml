@@ -8,8 +8,6 @@ services:
       - "${PORTOUT:-8080}:${PORTIN:-80}"
       - "2222:22"     # Puerto SSH
       - "1337:1337"   # Puerto del servicio secreto
-    volumes:
-      - ./flags:/flags:ro # Montamos la carpeta entera de flags como Solo Lectura (ro)
     networks:
       - ctf_net
     restart: always
