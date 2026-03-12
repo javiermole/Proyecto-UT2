@@ -27,8 +27,11 @@ while True:
         if data == '8492':
             with open('/flags/flag2.txt', 'rb') as f:
                 conn.sendall(b'\n[+] PIN CORRECTO. Flag: ' + f.read() + b'\n\n')
-            conn.sendall(b'[SYSTEM LOG] Usuario generado: ctf_player\n')
-            conn.sendall(b'[SYSTEM LOG] Password: R3tr0H4ck3r\n')
+            
+            # AQUI ESTA EL CAMBIO: Pistas para fuerza bruta
+            conn.sendall(b'[SYSTEM LOG] Usuario del sistema encontrado: ctf_player\n')
+            conn.sendall(b'[SYSTEM WARNING] ALERT! La contrasena de este usuario es debil y se encuentra en diccionarios publicos.\n')
+            conn.sendall(b'[SYSTEM ADVICE] Se requiere una auditoria de fuerza bruta en el puerto SSH (2222).\n')
         else:
             conn.sendall(b'\n[-] PIN INCORRECTO. Intruso detectado.\n')
     except Exception as e:

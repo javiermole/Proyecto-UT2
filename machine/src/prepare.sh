@@ -7,7 +7,10 @@ apt-get install -y apache2 php libapache2-mod-php openssh-server python3 netcat-
 # Configurar SSH y usuario
 mkdir /var/run/sshd
 useradd -m -s /bin/bash ctf_player
-echo 'ctf_player:R3tr0H4ck3r' | chpasswd
+
+# Contraseña débil para fuerza bruta
+echo 'ctf_player:metallica' | chpasswd
+
 sed -i 's/#PermitRootLogin prohibit-password/PermitRootLogin no/' /etc/ssh/sshd_config
 
 # Configurar Escalada de Privilegios:
