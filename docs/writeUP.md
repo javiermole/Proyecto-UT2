@@ -23,7 +23,7 @@ Este documento detalla el "Kill Chain" (cadena de explotación) previsto para re
    ```bash
    hydra -l ctf_player -P /usr/share/wordlists/rockyou.txt ssh://127.0.0.1:2222
    ```
-2. Tras unos segundos de ejecución, la herramienta confirma el hallazgo de credenciales válidas. La contraseña es: `qwerty`.
+2. Tras unos segundos de ejecución, la herramienta confirma el hallazgo de credenciales válidas. La contraseña es: `metallica`.
 3. El atacante utiliza estas credenciales para iniciar sesión en la máquina:
    ```bash
    ssh -p 2222 ctf_player@127.0.0.1
